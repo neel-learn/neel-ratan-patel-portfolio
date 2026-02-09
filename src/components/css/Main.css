@@ -1,6 +1,5 @@
 /* home */
 
-
 .screenpage{
     overflow: hidden;
     display: flex;
@@ -15,7 +14,7 @@
 }
 
 #home{
-    background-image: linear-gradient(rgb(255,255,255),rgb(133,133,133));
+    background:transparent;
 }
 
 main h2{
@@ -45,7 +44,7 @@ main h1{
 /* about*/
 
 #about{
-    background-image: linear-gradient(rgb(133,133,133),rgb(255,255,255));
+    background:transparent;
 }
 
 .about-container{
@@ -58,6 +57,8 @@ main h1{
 
 .about-left-section,
 .about-right-section {
+    background: transparent;
+    backdrop-filter: blur(10px);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 5;
     border-radius: 10%;
@@ -112,7 +113,7 @@ h3 span{
 }
 
 .about-left-section #about-name{
-    color:#6e6e73;
+    color: #00ffd4;
     font-size: 1.3rem;
 }
 .last-letter{
@@ -128,17 +129,21 @@ h3 span{
     flex: 1 1 50vh;
 }
 
+.about-text{
+    color: #00ffd4;
+}
+
 .about-right-section h4{
     margin-top: 2rem;
     font-size: 1.1rem;
     font-family:'Times New Roman', Times, serif;
-    color:#6e6e73;
+    color: #e3c586;
 }
 
 /* qualifications */
 
 #qualifications{
-    background-image: linear-gradient(rgb(255,255,255),rgb(133,133,133));
+    background:transparent;
 }
 .qualifications-heading{
     width: 100%;
@@ -153,7 +158,7 @@ h3 span{
 
 .qualifications-heading h3 span{
     font-size: 2rem;
-    color: #6e6e73;
+    color: #e3c586;
 }
 
 .academic-Qualifications{
@@ -177,17 +182,20 @@ h3 span{
     transition: transform 0.1s ease-in-out;
 }
 .qualification-container:hover{
-    background-image: linear-gradient(rgb(178,178,178), rgb(251,251,251));
+    backdrop-filter: blur(10px);
+}
+.qualification-container:hover{
+    background:transparent;
     transform: scale(1.03);
 }
 .qualificaiton-container-heading{
     margin: 2rem;
     font-size: 2rem;
     font-weight: 500;
-    color:#313131
+    color:#a7aa63;
 }
 .qualification-container-body{
-    color: #6e6e73;
+    color: #ffd2c2;
     font-size: 1rem;
     margin: 1rem;
     padding: 1.5rem;
@@ -208,11 +216,13 @@ h3 span{
 /*skills*/
 
 #skills{
-    background-image: linear-gradient(rgb(133,133,133),rgb(255,255,255));
+    padding-top: 3rem;
+    background:transparent;
 }
 .skill-languages-heading{
     text-align: center;
     font-size: 2rem;
+    color: #00ffd4;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -222,6 +232,7 @@ h3 span{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    color: #d2ddff;
     gap: 1.5rem;
 }
 
@@ -239,14 +250,15 @@ h3 span{
     transition: transform 0.1s ease-in-out;
 }
 .skills-container-elements:hover{
-    background-image: linear-gradient(rgb(178,178,178),rgb(251,251,251));
+    background: transparent;
     transform: scale(1.09);
 }
 
 /* projects */
 
 #projects{
-    background-image: linear-gradient(rgb(255,255,255),rgb(133,133,133));
+    padding-top: 3rem;
+    background:transparent;
 }
 .project-section{
     margin: 5rem;
@@ -270,12 +282,12 @@ h3 span{
     padding: 1rem;
 }
 .project-container:hover{
-    background-image: linear-gradient(rgb(178,178,178),rgb(251,251,251));
+    background: transparent;
     transform: scale(1.03);
 }
 .project-container a{
     text-decoration: none;
-    color: #313131;
+    color: #00ffd4;
 }
 .project-container h4{
     display: flex;
@@ -287,13 +299,13 @@ h3 span{
     font-size: 1rem;
     font-family: 'Poppins';
     font-weight: 100;
-    color: #6e6e73;
+    color: #d2ddff;
 }
 .role{
     padding-top: 1rem;
 }
 .role-bold{
-    color: black;
+    color:#fc5c02;
     font-weight: 600;
 }
 
@@ -301,13 +313,14 @@ h3 span{
 
 #contact {
     /* Removed overflow: hidden so the page can expand and scroll */
+    padding-top: 3rem;
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 100vh; /* Changed to 100vh for better fit */
+    min-height: 90vh; /* Changed to 100vh for better fit */
     height: auto;      /* Allows container to grow with PDF */
-    background-image: linear-gradient(rgb(133,133,133),rgb(255,255,255));
+    background:transparent;
 }
 
 .contact-container {
@@ -329,7 +342,7 @@ h3 span{
     height: 20rem;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     text-decoration: none;
-    color: #313131;
+    color: #00ffd4;
     z-index: 5;
     border-radius: 10%;
     flex: 1 1 25vh;
@@ -343,7 +356,7 @@ h3 span{
 }
 
 .contact-main-elements:hover {
-    background-image: linear-gradient(rgb(178,178,178),rgb(251,251,251));
+    background:transparent;
     transform: scale(1.03);
 }
 
@@ -368,7 +381,7 @@ span.material-symbols-outlined.contact-main-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #313131;
+    color: #d2ddff;
     z-index: 5;
     border-radius: 10%;
     text-decoration: none;
@@ -378,7 +391,7 @@ span.material-symbols-outlined.contact-main-image {
 }
 
 .contact-local-elements:hover {
-    background-image: linear-gradient(rgb(178,178,178),rgb(251,251,251));
+    background: transparent;
     transform: scale(1.09);
 }
 
@@ -417,17 +430,18 @@ span.material-symbols-outlined.contact-main-image {
     width: 80%;
     padding: 15px;
     font-size: 18px;
-    color: #6e6e73;
+    background: transparent;
     border: none;
     border-radius: 2rem;
     cursor: pointer;
+    color:#87db20;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transition: background-color 0.3s;
 }
 
 .full-width-btn:hover {
-    background-color: white;
-    color: #474747;
+
+    color: #ffffff;
 }
 
 /* PDF CONTAINER TRANSITIONS */
@@ -455,3 +469,213 @@ span.material-symbols-outlined.contact-main-image {
     border: none;
     display: block;
 }
+
+@media screen and (max-width:1400px){
+    main h1{
+        font-size:10rem;
+        letter-spacing: 0;
+    }
+    .about-container{
+        margin: 6rem 10rem 10rem 10rem;
+    }
+
+    /*qualification*/
+    /* .academic-Qualifications{
+        margin:1rem 1rem 5rem 1rem;
+    }
+    .qualifications-heading{
+        margin-top: 3rem;
+    } */
+    .qualification-container-body{
+        margin: 0;
+        padding: 1rem;
+    }
+
+    
+    /*contact*/
+
+
+    .contact-container{
+        margin: 2rem 5rem 2.5rem 5rem;
+    }
+    .contact-main-elements{
+        height: 20rem;
+        flex:1 1 35vh;
+    }
+
+    
+}
+
+
+@media screen and (max-width:768px){
+
+    
+    .title-section{
+        margin-top: 2vh;
+    }
+    main h1{
+        font-size: 5rem;
+    }
+    main h2{
+        font-size: 4rem;
+    }
+    .about-right-section{
+        h4{
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+    }
+
+    /*about*/
+
+    .about-container{
+        margin: 5rem;
+    }
+    .about-right-section{
+        padding: 2rem;
+    }
+    h3{
+        margin: 0;
+    }
+    h3 span{
+        font-size: 1.5rem;
+    }
+
+    /*qualification*/
+    .academic-Qualifications{
+        margin:1rem 1rem 5rem 1rem;
+    }
+    .qualifications-heading{
+        margin-top: 3rem;
+    }
+    .qualification-container-body{
+        margin: 0;
+        padding: 1rem;
+    }
+
+    /*skills*/
+
+    .skills-container{
+        margin:1rem 1rem 3rem 1rem;
+        gap:1rem;
+    }
+    .skills-container-elements{
+        height: 14vh;
+    }
+
+    /* project */
+
+    .project-section{
+        margin:1rem;
+    }
+
+    /*contact*/
+
+    .contact-container{
+        margin: 2rem 5rem 2.5rem 5rem;
+    }
+    .contact-main-elements{
+        height: 10rem;
+        flex:1 1 25vh;
+    }
+    
+}
+
+
+@media screen and (max-width:480px){
+   .title-section{
+        margin-top: 8vh;
+    }
+   main h1{
+    font-size: 4rem;
+   }
+   main h2{
+    font-size: 3rem;
+   }
+
+   
+    /*about*/
+
+    .about-container{
+        margin: 5rem 2rem 2rem 2rem;
+    }
+    .about-left-section #about-img img{
+        width: 20vh;
+    }
+
+    /* qualification */
+
+    .qualifications-heading{
+        margin-top: 3rem;
+    }
+    .academic-Qualifications{
+        margin:0.8rem;
+        gap:1rem;
+    }
+    .qualificaiton-container-heading{
+        margin: 1rem 0rem 0rem 0rem;
+    }
+    .qualification-container-body{
+        margin: 0.5rem;
+        padding:1rem;
+    }
+
+    /* skills */
+
+    .skills-container{
+        margin: 1rem;
+        gap:1rem;
+    }
+    .skills-container-elements{
+        height: 15vh;
+    }
+
+    /*projects */
+
+    /*contact*/
+    #contact{
+        min-height: 90vh;
+    }
+    .contact-container{
+        margin: 2rem;
+    }
+    .contact-main-elements{
+        height: 10rem;
+    }
+    .contact-local-container{
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    .contact-local-elements{
+        height: 3rem;
+        width: 3rem;
+    }
+
+   
+}
+
+@media screen and (max-height:350px){
+
+    /* home */
+    .title-section{
+        margin-top: 50vh;
+    }
+    main h1{
+        font-size: 6rem;
+    }
+    main h2{
+        font-size: 5rem;
+    }
+
+    /*about*/
+
+    .about-container{
+        margin: 2rem 2rem 2rem 2rem;
+    }
+    .about-left-section #about-img img{
+        width: 20vh;
+    }
+
+
+} 

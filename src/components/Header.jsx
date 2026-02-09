@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./css/Header.css";
-import { useSelector } from "react-redux"
+import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
 
 const Header = () => {
-
   const navBarList = useSelector((state) => state.portfolio.navBarList);
 
   const [isActive, setIsActive] = useState(false);
@@ -21,15 +21,22 @@ const Header = () => {
   return (
     <header className="navbar">
       <nav>
-        <div className="portfolio-heading left">
+        <motion.div
+          className="portfolio-heading left"
+          layoutId="main-logo"
+          transition={{
+            type: "spring",
+            stiffness: 50,
+            damping: 20,
+            duration: 1.2,
+          }}
+        >
           {portFolioTitle.split("").map((letter, index) => (
             <span key={index} className="hover-grow">
               {letter}
             </span>
           ))}
-        </div>
-
-
+        </motion.div>
 
         <div className="right">
           <button
@@ -41,14 +48,22 @@ const Header = () => {
             <div className="bar"></div>
           </button>
 
-          
           <ul className={`nav-links ${isActive ? "active" : ""}`}>
             {navBarList.map((item, index) => (
-              <li key={index}>
+              <motion.li
+                key={index}
+                initial={
+                  window.innerWidth <= 768
+                    ? { opacity: 0, x: 20 }
+                    : { opacity: 1, x: 0 }
+                }
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
                 <a href={item.href} onClick={closeMenu}>
                   <i className={item.className} id={item.id}></i>
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>

@@ -13,7 +13,8 @@ footer {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     min-height: 5vh;
     width: 100%;
-    background-image: linear-gradient(rgb(255,255,255), rgb(133,133,133));
+    background: transparent;
+    backdrop-filter: blur(10px);
 }
 
 .footer h4 {

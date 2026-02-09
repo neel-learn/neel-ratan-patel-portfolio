@@ -7,10 +7,15 @@
 }
 
 body{
-    color:#313131;
-    background-color: #f5f5f7;
+    background: transparent;
+    overflow-x: hidden;
     -webkit-user-select:none;
     -moz-user-select: none;
     -ms-user-select:none;
     user-select: none;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+

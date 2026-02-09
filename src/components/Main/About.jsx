@@ -32,7 +32,7 @@ const About = () => {
                     
                 </div>
                 <div className="about-right-section">
-                    <h3>
+                    <h3 className='about-text'>
                         <span className="hover-grow">A</span>
                         <span className="hover-grow">b</span>
                         <span className="hover-grow">o</span>
@@ -43,7 +43,7 @@ const About = () => {
                         <span className="hover-grow">e</span>
                     </h3>
                     <h4>
-                        Hi, I am a Java Full Stack Developer with a strong foundation in Core & Advanced Java, Spring, Spring Boot, SQL, HTML, CSS, JavaScript, and Bootstrap. Quick learner with good problem-solving skills and a passion for coding and web development.Complete Ethical Hacking course from DROP Organization.
+                        Hi, I am a Java Full Stack Developer with a strong foundation in Core & Advanced Java, Spring, Spring Boot, SQL, HTML, CSS, JavaScript, and Bootstrap. Quick learner with good problem-solving skills and a passion for coding and web development. Complete Ethical Hacking course from DROP Organization.
                     </h4>
                 </div>
             </div>

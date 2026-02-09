@@ -1,0 +1,54 @@
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050505; /* Deep dark background */
+    z-index: -1; /* Ensures it stays behind Header and Main */
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px); /* This creates the soft gradient effect */
+    opacity: 0.5;
+    animation: moveBlobs 25s infinite alternate ease-in-out;
+}
+
+.blob-purple {
+    background: #6f2dbd;
+    top: -10%;
+    left: -10%;
+}
+
+.blob-cyan {
+    background: #00ffd4;
+    bottom: -10%;
+    right: -5%;
+    animation-delay: -5s;
+}
+
+.blob-blue {
+    background: #fc5c02;
+    top: 40%;
+    left: 20%;
+    animation-delay: -1s;
+}
+
+/* Subtle movement animation */
+@keyframes moveBlobs {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, 50px) scale(1.1); }
+    66% { transform: translate(-50px, 100px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+}

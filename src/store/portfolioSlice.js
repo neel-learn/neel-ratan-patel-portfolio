@@ -4,7 +4,10 @@ import axios from "axios";
 export const fetchPortfolioData = createAsyncThunk(
   "portfolio/fetchData",
   async () => {
-    const response = await axios.get("https://portfolio-nrcb.onrender.com/api/portfolio");
+    const [ response ] = await Promise.all([
+      axios.get("https://portfolio-nrcb.onrender.com/api/portfolio"),
+      new Promise((resolve) => setTimeout(resolve, 3000))
+    ]) 
     return response.data;
   }
 );
@@ -55,6 +58,9 @@ const portfolioSlice = createSlice({
       })
       .addCase(fetchPortfolioData.rejected, (state) => {
         state.status = "failed";
+      })
+      .addCase(fetchPortfolioData.pending, (state) => {
+        state.status = "loading";
       })
       .addCase(updateLikesInDb.fulfilled, (state, action) => {
          state.likeCount = action.payload.likes;
