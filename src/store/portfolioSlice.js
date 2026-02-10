@@ -6,6 +6,7 @@ export const fetchPortfolioData = createAsyncThunk(
   async () => {
     const [ response ] = await Promise.all([
       axios.get("https://portfolio-nrcb.onrender.com/api/portfolio"),
+      // axios.get("http://localhost:5000/api/portfolio"),
       new Promise((resolve) => setTimeout(resolve, 3000))
     ]) 
     return response.data;
@@ -31,12 +32,26 @@ const portfolioSlice = createSlice({
     status: "idle",
   },
   reducers: {
-    addLike: (state) => {
-      state.likeCount += 1;
+    // addLike: (state) => {
+    //   state.likeCount += 1;
+    // },
+    // disLike: (state) => {
+    //   state.likeCount -= 1;
+    // },
+
+    toggleLikeOptimistic: (state) => {
+      if (state.currentUserLiked) {
+        state.likeCount -= 1;
+        state.currentUserLiked = false;
+      } else {
+        state.likeCount += 1;
+        state.currentUserLiked = true;
+      }
     },
-    disLike: (state) => {
-      state.likeCount -= 1;
-    },
+    rollbackLike: (state, action) => {
+      state.likeCount = action.payload.likes;
+      state.currentUserLiked = action.payload.liked;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -68,23 +83,22 @@ const portfolioSlice = createSlice({
       });
   },
 });
+
+const BASE_URL = "https://portfolio-nrcb.onrender.com";
 export const updateLikesInDb = createAsyncThunk(
   "portfolio/updateLikes",
-  async (actionType) => {
+  async() => {
     try{
-      const response = await axios.patch(
-      'https://portfolio-nrcb.onrender.com/api/portfolio/like',
-      { action: actionType }
-    );
-    return response.data;
+      const response = await axios.patch(`${BASE_URL}/api/portfolio/like`);
+      return response.data;
     } catch (error) {
       console.log("Failed to update likes: ", error);
       throw error;
     }
-    
   }
 );
 
-export const { addLike } = portfolioSlice.actions;
-export const { disLike } = portfolioSlice.actions;
+// export const { addLike } = portfolioSlice.actions;
+// export const { disLike } = portfolioSlice.actions;
+export const { toggleLikeOptimistic, rollbackLike } = portfolioSlice.actions;
 export default portfolioSlice.reducer;
