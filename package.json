@@ -17,7 +17,6 @@
     "@fortawesome/fontawesome-free": "^7.1.0",
     "@lottiefiles/lottie-player": "^2.0.12",
     "@reduxjs/toolkit": "^2.11.2",
-    "axios": "^1.13.2",
     "bootstrap": "^5.3.8",
     "framer-motion": "^12.27.5",
     "react": "^19.2.0",

@@ -1,0 +1,615 @@
+/* =========================================================
+   PROJECTS / WORK
+   ========================================================= */
+
+.fifthSection {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: var(--section-padding) 5vw 8rem;
+
+    border-top: 1px solid var(--line-soft);
+
+    overflow: hidden;
+}
+
+/* Anchor offset */
+#projects {
+    padding-top: 180px;
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+   ========================================================= */
+
+.fifthSection::before {
+    content: "05 / SELECTED WORK";
+
+    position: absolute;
+
+    top: 7rem;
+    left: 5vw;
+
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   PROJECT HEADING
+   ========================================================= */
+
+.projects-heading {
+    width: min(1200px, 100%);
+
+    margin: 0 auto 5rem;
+}
+
+.projects-heading h3 {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 9vw, 9rem);
+    font-weight: 700;
+
+    line-height: 0.82;
+
+    letter-spacing: -0.075em;
+
+    color: var(--text-primary);
+}
+
+.projects-heading .hover-grow {
+    display: inline-block;
+
+    transition:
+        color 0.3s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projects-heading .hover-grow:hover {
+    color: var(--accent);
+
+    transform: translateY(-6px);
+}
+
+
+/* =========================================================
+   PROJECT LIST
+   ========================================================= */
+
+.project-section {
+    width: min(1200px, 100%);
+
+    margin: 0 auto;
+
+    border-top: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   PROJECT ITEM
+   ========================================================= */
+
+.project-container {
+    position: relative;
+
+    min-height: 210px;
+
+    border-bottom: 1px solid var(--line-soft);
+
+    overflow: hidden;
+
+    transition:
+        background 0.4s ease;
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+   ========================================================= */
+
+.project-content {
+    position: relative;
+
+    min-height: 210px;
+
+    padding: 2.8rem 4rem 2.8rem 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+   ========================================================= */
+
+.project-container::before {
+    position: absolute;
+
+    left: 0;
+    top: 5rem;
+
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+
+    letter-spacing: 0.12em;
+
+    color: var(--accent);
+
+    z-index: 3;
+}
+
+.project-container:nth-child(1)::before {
+    content: "01";
+}
+
+.project-container:nth-child(2)::before {
+    content: "02";
+}
+
+.project-container:nth-child(3)::before {
+    content: "03";
+}
+
+.project-container:nth-child(4)::before {
+    content: "04";
+}
+
+.project-container:nth-child(5)::before {
+    content: "05";
+}
+
+.project-container:nth-child(6)::before {
+    content: "06";
+}
+
+.project-container:nth-child(7)::before {
+    content: "07";
+}
+
+.project-container:nth-child(8)::before {
+    content: "08";
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+
+.project-container h4 {
+    position: relative;
+
+    margin: 0 0 1rem;
+
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 600;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    color: var(--text-primary);
+
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.35s ease;
+}
+
+
+/* =========================================================
+   PROJECT DESCRIPTION
+   ========================================================= */
+
+.project-container h5 {
+    max-width: 720px;
+
+    margin: 0 0 0.8rem;
+
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color: var(--text-secondary);
+
+    transition:
+        color 0.3s ease,
+        transform 0.45s ease;
+}
+
+
+/* =========================================================
+   ROLE
+   ========================================================= */
+
+.project-container h5.role {
+    margin-top: 0.8rem;
+
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--text-muted);
+}
+
+.project-container .role-bold {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   PROJECT ACTIONS
+   GitHub / Deploy
+   ========================================================= */
+
+.project-actions {
+    position: relative;
+
+    display: flex;
+
+    gap: 0.7rem;
+
+    margin-top: 1.3rem;
+
+    z-index: 4;
+}
+
+.project-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 0.65rem 1rem;
+
+    border: 1px solid var(--line-soft);
+
+    background: rgba(255, 255, 255, 0.015);
+
+    color: var(--text-secondary);
+
+    font-family: var(--font-mono);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-btn:hover {
+    color: var(--accent);
+
+    border-color: var(--accent);
+
+    background: rgba(217, 255, 0, 0.05);
+
+    transform: translateY(-3px);
+}
+
+
+/* GitHub button */
+
+.project-btn.github::before {
+    content: "⌘";
+
+    margin-right: 0.5rem;
+
+    font-size: 0.8rem;
+}
+
+
+/* Deploy button */
+
+.project-btn.deploy::before {
+    content: "↗";
+
+    margin-right: 0.5rem;
+}
+
+
+/* =========================================================
+   HOVER BACKGROUND
+   ========================================================= */
+
+.project-container::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(217, 255, 0, 0.08),
+            rgba(217, 255, 0, 0.025),
+            transparent
+        );
+
+    transition:
+        height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HOVER STATE
+   ========================================================= */
+
+.project-container:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(217, 255, 0, 0.025),
+            transparent 55%
+        );
+}
+
+.project-container:hover::after {
+    height: 100%;
+}
+
+.project-container:hover h4 {
+    color: var(--accent);
+
+    transform: translateX(10px);
+}
+
+.project-container:hover h5 {
+    transform: translateX(10px);
+}
+
+.project-container:hover .project-actions {
+    transform: translateX(10px);
+}
+
+
+/* =========================================================
+   TOP RIGHT LABEL
+   ========================================================= */
+
+.project-section::after {
+    content: "SELECTED WORK / OPEN TO EXPLORE ↗";
+
+    display: block;
+
+    margin-top: 1.5rem;
+
+    text-align: right;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.15em;
+
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .fifthSection {
+        padding: 8rem 3rem 6rem;
+    }
+
+    .fifthSection::before {
+        left: 3rem;
+    }
+
+    .projects-heading {
+        margin-bottom: 4rem;
+    }
+
+    .project-content {
+        padding-left: 90px;
+        padding-right: 4rem;
+    }
+
+    .project-container {
+        min-height: 190px;
+    }
+
+    .project-content {
+        min-height: 190px;
+    }
+
+    .project-container h4 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .fifthSection {
+        min-height: auto;
+
+        padding: 8rem 1.5rem 6rem;
+    }
+
+    .fifthSection::before {
+        top: 3rem;
+        left: 1.5rem;
+    }
+
+    .projects-heading {
+        margin-bottom: 3.5rem;
+    }
+
+    .projects-heading h3 {
+        font-size: clamp(3.7rem, 16vw, 6rem);
+    }
+
+    .project-container {
+        min-height: auto;
+    }
+
+    .project-content {
+        min-height: auto;
+
+        padding: 2.2rem 3.5rem 2.2rem 3.5rem;
+    }
+
+    .project-container::before {
+        left: 0;
+        top: 2.3rem;
+    }
+
+    .project-container h4 {
+        font-size: clamp(1.7rem, 8vw, 2.7rem);
+
+        margin-bottom: 0.9rem;
+    }
+
+    .project-container h5 {
+        font-size: 0.8rem;
+
+        line-height: 1.7;
+    }
+
+    .project-container h5.role {
+        font-size: 0.55rem;
+    }
+
+    /* Buttons mobile */
+
+    .project-actions {
+        flex-wrap: wrap;
+
+        margin-top: 1rem;
+    }
+
+    .project-btn {
+        min-width: 95px;
+
+        padding: 0.6rem 0.8rem;
+
+        font-size: 0.52rem;
+    }
+
+    .project-container:hover h4,
+    .project-container:hover h5,
+    .project-container:hover .project-actions {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .fifthSection {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    .fifthSection::before {
+        left: 1.2rem;
+    }
+
+    .projects-heading h3 {
+        font-size: clamp(3.3rem, 17vw, 5rem);
+    }
+
+    .project-content {
+        padding-left: 2.7rem;
+        padding-right: 2.5rem;
+    }
+
+    .project-container h4 {
+        font-size: 1.65rem;
+    }
+
+    .project-container h5 {
+        font-size: 0.75rem;
+    }
+
+    .project-container::before {
+        font-size: 0.5rem;
+    }
+
+    .project-actions {
+        gap: 0.5rem;
+    }
+
+    .project-btn {
+        min-width: auto;
+
+        padding: 0.55rem 0.7rem;
+
+        font-size: 0.48rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-container,
+    .project-container::after,
+    .project-container h4,
+    .project-container h5,
+    .project-container .project-actions,
+    .project-btn {
+        transition: none;
+    }
+
+    .project-container:hover h4,
+    .project-container:hover h5,
+    .project-container:hover .project-actions {
+        transform: none;
+    }
+}

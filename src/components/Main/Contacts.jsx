@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 // import { addLike, disLike, updateLikesInDb } from "../../store/portfolioSlice";
-import { toggleLikeOptimistic, rollbackLike, updateLikesInDb } from "../../store/portfolioSlice";
-import myresume from "../objects/pdf/NEEL RATAN PATEL RESUME.pdf";
+import { toggleLike } from "../../store/portfolioSlice";
+import myresume from "../objects/pdf/NEEL_RATAN_PATEL_JAVA_FULL_STACK_DEVELOPER_RESUME.pdf"
 import { useDispatch, useSelector } from "react-redux";
 import Massage from "./contact/massage";
 
@@ -16,7 +16,6 @@ const Contacts = () => {
   const dispatch = useDispatch();
   const likeCount = useSelector((state) => state.portfolio.likeCount);
 
-  // const [liked, setLiked] = useState(false);
   const [showPdf, setShowPdf] = useState(false);
 
   const pdfRef = useRef(null);
@@ -29,42 +28,9 @@ const Contacts = () => {
     }
   }, [showPdf]);
 
-  // useEffect(() => {
-  //   if (currentUserLiked !== undefined) {
-  //     setLiked(currentUserLiked);
-  //   }
-  // }, [currentUserLiked]);
-
-  const handleLikeClick = async () => {
-    const originalState = { likes: likeCount, liked: currentUserLiked };
-
-    dispatch(toggleLikeOptimistic());
-
-    try {
-      const result = await dispatch(updateLikesInDb());
-
-      if (updateLikesInDb.rejected.match(result)) {
-        dispatch(rollbackLike(originalState));
-      }
-    } catch (error) {
-      dispatch(rollbackLike(originalState));
-    }
-  };
-
-  // const handleLikeClick = async () => {
-
-  //     try {
-  //         const actionToSend = liked ? 'dec' : 'inc';
-
-  //         const result = await dispatch(updateLikesInDb(actionToSend));
-
-  //         if(updateLikesInDb.fulfilled.match(result)){
-  //           setLiked(result.payload.liked);
-  //         }
-  //     } catch (error) {
-  //         console.error("Failed to toggle like: ", error);
-  //     }
-  // };
+const handleLikeClick = () => {
+  dispatch(toggleLike());
+};
 
   return (
     <section id="contact" className="sixthSection">
@@ -109,12 +75,12 @@ const Contacts = () => {
               {currentUserLiked ? (
                 <i
                   className="fa-solid fa-heart"
-                  style={{ color: "#ed0707", fontSize: "1.4rem" }}
+                  style={{  fontSize: "1.4rem" }}
                 ></i>
               ) : (
                 <i
                   className="fa-regular fa-heart"
-                  style={{ color: "#151313ff", fontSize: "1.4rem" }}
+                  style={{  fontSize: "1.4rem" }}
                 ></i>
               )}
             </span>

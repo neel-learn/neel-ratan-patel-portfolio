@@ -1,21 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+#root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  isolation: isolate;
 }
 
-body{
-    background: transparent;
-    overflow-x: hidden;
-    -webkit-user-select:none;
-    -moz-user-select: none;
-    -ms-user-select:none;
-    user-select: none;
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+/* Main content sits above the background */
+
+main {
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
+/* Keep sections above the background */
+
+main > section,
+main > div {
+  position: relative;
+  z-index: 2;
+}
+
+/* Global section label */
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+}
+
+.section-label::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* Global hover text behavior */
+
+.hover-grow {
+  display: inline-block;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s ease;
+}
+
+.hover-grow:hover {
+  transform: translateY(-0.08em);
+  color: var(--accent);
+}
+
+/* Main page transition */
+
+main {
+  animation: pageReveal 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Buttons */
+
+.full-width-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 0 1.5rem;
+
+  background: var(--text-primary);
+  color: #080808;
+
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.full-width-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Remove old Bootstrap-ish visual behavior from images */
+
+img {
+  user-select: none;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .section-label {
+    font-size: 0.65rem;
+  }
+}

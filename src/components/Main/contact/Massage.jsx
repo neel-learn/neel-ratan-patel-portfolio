@@ -47,9 +47,7 @@ const Massage = () => {
             setShowForm(true);
           }}
         >
-          <span className="material-symbols-outlined contact-main-image">
-            mail
-          </span>
+          <i className="fa-solid fa-envelope contact-main-image"></i>
           <h4 className="contact-name">Email</h4>
           <h6 className="contact-link">Drop Massage Here</h6>
         </a>
@@ -102,9 +100,7 @@ const Massage = () => {
         className="location contact-main-elements"
         href="https://maps.google.com"
       >
-        <span className="material-symbols-outlined contact-main-image">
-          location_on
-        </span>
+        <i className="fa-solid fa-location-dot contact-main-image"></i>
         <h4 className="contact-name">Location</h4>
         <h4 className="contact-link">Varanasi, India</h4>
       </a>

@@ -1,26 +1,183 @@
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 footer {
-    width: 100%;
-    /* Ensures footer stays below all content, including the PDF */
-    margin-top: auto; 
+  position: relative;
+
+  width: 100%;
+
+  border-top: 1px solid var(--line-soft);
+
+  overflow: hidden;
 }
+
+
+/* =========================================================
+   FOOTER CONTAINER
+   ========================================================= */
 
 .footer {
-    display: flex;                /* Added: Flex on the container */
-    justify-content: center;      /* Added: Centers text horizontally */
-    align-items: center;          /* Added: Centers text vertically */
-    text-align: center;
-    
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    min-height: 5vh;
-    width: 100%;
-    background: transparent;
-    backdrop-filter: blur(10px);
+  position: relative;
+
+  width: min(1200px, 90%);
+
+  min-height: 110px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
 }
 
+
+/* =========================================================
+   LEFT ACCENT LINE
+   ========================================================= */
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 45px;
+  height: 1px;
+
+  background: var(--accent);
+
+  transition:
+    width 0.4s ease;
+}
+
+.footer:hover::before {
+  width: 100%;
+}
+
+
+/* =========================================================
+   COPYRIGHT TEXT
+   ========================================================= */
+
 .footer h4 {
-    color:black;
-    font-size: 10px;
-    font-weight: bold;
-    margin: 0;                   /* Removes default browser margins */
-    padding: 10px 0;
+  margin: 0;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.55rem;
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   DOMAIN HIGHLIGHT
+   ========================================================= */
+
+.footer:hover h4 {
+  color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   RIGHT SIDE TECH LABEL
+   ========================================================= */
+
+.footer::after {
+  content: "END / 06";
+
+  font-family: var(--font-mono);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-muted);
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .footer {
+    width: calc(100% - 3rem);
+
+    min-height: 100px;
+  }
+
+  .footer h4 {
+    font-size: 0.5rem;
+  }
+
+  .footer::after {
+    font-size: 0.45rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .footer {
+    width: calc(100% - 2.4rem);
+
+    min-height: 120px;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 0.7rem;
+
+    padding-top: 1.5rem;
+  }
+
+  .footer h4 {
+    max-width: 100%;
+
+    font-size: 0.48rem;
+  }
+
+  .footer::after {
+    font-size: 0.45rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer::before,
+  .footer h4 {
+    transition: none;
+  }
 }
