@@ -124,28 +124,25 @@ export const projectList = [
     title: "Professional Finance Dashboard",
 
     description:
-        "A clean, responsive, and data-driven finance dashboard built with React, Redux Toolkit, and Recharts.",
+      "A clean, responsive, and data-driven finance dashboard built with React, Redux Toolkit, and Recharts.",
 
-    role:
-        "Frontend Developer responsible for dashboard architecture, state management, data visualization and responsive UI.",
+    role: "Frontend Developer responsible for dashboard architecture, state management, data visualization and responsive UI.",
 
     technologies: [
-        "React 19",
-        "Vite",
-        "Redux Toolkit",
-        "Recharts",
-        "Lucide React",
-        "Custom CSS"
+      "React 19",
+      "Vite",
+      "Redux Toolkit",
+      "Recharts",
+      "Lucide React",
+      "Custom CSS",
     ],
 
     github: "https://github.com/neelratanpatel/finance-dashboard",
 
     deploy: "https://neelratanpatel.github.io/finance-dashboard/",
 
-    featured: false
-},
-
-
+    featured: false,
+  },
 
   {
     title: "Portfolio Website",
@@ -196,25 +193,18 @@ export const projectList = [
     title: "N-AI",
 
     description:
-        "A modern AI platform interface designed with a beautiful responsive UI, interactive dashboard, dark/light mode, product showcase and mobile navigation.",
+      "A modern AI platform interface designed with a beautiful responsive UI, interactive dashboard, dark/light mode, product showcase and mobile navigation.",
 
-    role:
-        "Frontend Developer responsible for the complete UI design, responsive layout and interactive frontend experience.",
+    role: "Frontend Developer responsible for the complete UI design, responsive layout and interactive frontend experience.",
 
-    technologies: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Responsive Design",
-        "UI/UX"
-    ],
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX"],
 
     github: "https://github.com/neelratanpatel/N-ai",
 
     deploy: "https://neelratanpatel.github.io/N-ai/",
 
-    featured: false
-},
+    featured: false,
+  },
 
   {
     title: "Online Event Management",
@@ -233,9 +223,7 @@ export const projectList = [
     featured: false,
   },
 
-
-
-    {
+  {
     title: "MotionTorch",
     description:
       "An Android application that uses device motion sensors to control the flashlight. The application includes background operation, foreground services and reliable flashlight state management.",
@@ -272,7 +260,7 @@ export const projectList = [
 
     featured: false,
   },
-    {
+  {
     title: "Library Management System",
     description:
       "A Java-based library management system implementing dynamic array manipulation, book insertion, searching for available space and element shifting when books are removed.",
@@ -336,7 +324,7 @@ export const socialLinks = [
     id: "instagram",
   },
   {
-    href: "https://www.linkedin.com/in/neel-ratan-patel",
+    href: "https://www.linkedin.com/in/neel-ratan-patel-5a3543407",
     icon: "fa-brands fa-linkedin",
     id: "linkedin",
   },

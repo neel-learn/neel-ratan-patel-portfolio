@@ -1,0 +1,422 @@
+/* =========================================================
+   SKILLS / TECHNICAL INDEX
+   ========================================================= */
+
+.fourthSection {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: var(--section-padding) 5vw 7rem;
+
+  border-top: 1px solid var(--line-soft);
+
+  overflow: hidden;
+}
+
+#skills {
+  padding-top: 160px;
+  scroll-margin-top: 100px;
+}
+
+/* =========================================================
+   SECTION NUMBER
+   ========================================================= */
+
+.fourthSection::before {
+  content: "04 / STACK";
+
+  position: absolute;
+
+  top: 7rem;
+  left: 5vw;
+
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.fourthSection .skills-heading {
+  width: min(1200px, 100%);
+  margin: 0 auto 5rem;
+  position: relative;
+  z-index: 2;
+}
+.fourthSection .skills-heading h3 {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 700;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.075em;
+
+  color: var(--text-primary);
+}
+
+.fourthSection .skills-heading .hover-grow {
+  transition:
+    color 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fourthSection .skills-heading .hover-grow:hover {
+  color: var(--accent);
+
+  transform: translateY(-6px);
+}
+
+/* =========================================================
+   SKILLS MAIN GRID
+   ========================================================= */
+
+.skills-container {
+  position: relative;
+
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  padding: 1.7rem 0;
+
+  display: grid;
+
+  grid-template-columns: 250px 1fr;
+
+  gap: 3rem;
+
+  border-top: 1px solid var(--line-soft);
+
+  transition:
+    padding-left 0.4s ease,
+    background 0.4s ease;
+}
+
+/* Last category */
+
+.skills-container:last-child {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+/* =========================================================
+   CATEGORY TITLE
+   ========================================================= */
+
+.skill-languages-heading {
+  position: relative;
+
+  margin: 0;
+
+  padding-top: 0.25rem;
+
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+}
+
+/* Number before category */
+
+.skills-container:nth-of-type(2)::before {
+  content: "01";
+}
+
+.skills-container:nth-of-type(3)::before {
+  content: "02";
+}
+
+.skills-container:nth-of-type(4)::before {
+  content: "03";
+}
+
+.skills-container:nth-of-type(5)::before {
+  content: "04";
+}
+
+.skills-container:nth-of-type(6)::before {
+  content: "05";
+}
+
+.skills-container:nth-of-type(7)::before {
+  content: "06";
+}
+
+.skills-container:nth-of-type(8)::before {
+  content: "07";
+}
+
+.skills-container::before {
+  position: absolute;
+
+  left: -2.2rem;
+  top: 1.8rem;
+
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+
+  color: var(--accent);
+
+  opacity: 0.7;
+}
+
+/* =========================================================
+   SKILL ITEMS
+   ========================================================= */
+
+.skills-languages {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.65rem;
+}
+
+/* =========================================================
+   INDIVIDUAL SKILL
+   ========================================================= */
+
+.skills-container-elements {
+  position: relative;
+
+  padding: 0.75rem 1rem;
+
+  border: 1px solid var(--line);
+
+  background: rgba(255, 255, 255, 0.015);
+
+  overflow: hidden;
+
+  cursor: default;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Animated accent layer */
+
+.skills-container-elements::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 0;
+
+  background: var(--accent);
+
+  opacity: 0.9;
+
+  transition: height 0.3s ease;
+
+  z-index: 0;
+}
+
+/* Text */
+
+.skills-container-elements h4 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.04em;
+
+  color: var(--text-secondary);
+
+  transition: color 0.3s ease;
+}
+
+/* Hover */
+
+.skills-container-elements:hover {
+  border-color: var(--accent);
+
+  transform: translateY(-4px);
+}
+
+.skills-container-elements:hover::before {
+  height: 100%;
+}
+
+.skills-container-elements:hover h4 {
+  color: #080808;
+}
+
+/* =========================================================
+   CATEGORY HOVER
+   ========================================================= */
+
+.skills-container:hover {
+  background: linear-gradient(90deg, rgba(217, 255, 0, 0.025), transparent 60%);
+}
+
+/* =========================================================
+   DESKTOP LARGE
+   ========================================================= */
+
+@media (min-width: 1400px) {
+  .skills-container {
+    grid-template-columns: 280px 1fr;
+
+    gap: 4rem;
+  }
+
+  .skills-container-elements {
+    padding: 0.85rem 1.15rem;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .fourthSection {
+    padding: 8rem 3rem 6rem;
+  }
+
+  .fourthSection::before {
+    left: 3rem;
+  }
+
+  .fourthSection .skills-heading {
+    margin-bottom: 4rem;
+  }
+
+  .skills-container {
+    grid-template-columns: 190px 1fr;
+
+    gap: 2rem;
+  }
+
+  .skills-container::before {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .fourthSection {
+    min-height: auto;
+
+    padding: 8rem 1.5rem 6rem;
+  }
+
+  .fourthSection::before {
+    top: 3rem;
+    left: 1.5rem;
+  }
+
+  .fourthSection .skills-heading {
+    margin-bottom: 3.5rem;
+  }
+
+  .fourthSection .skills-heading h3 {
+    font-size: clamp(3.7rem, 16vw, 6rem);
+  }
+
+  .skills-container {
+    display: block;
+
+    padding: 1.8rem 0;
+  }
+
+  .skill-languages-heading {
+    margin-bottom: 1rem;
+
+    font-size: 0.58rem;
+  }
+
+  .skills-languages {
+    gap: 0.5rem;
+  }
+
+  .skills-container-elements {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .skills-container-elements h4 {
+    font-size: 0.58rem;
+  }
+
+  .skills-container-elements:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .fourthSection {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .fourthSection::before {
+    left: 1.2rem;
+  }
+
+  .fourthSection .skills-heading h3 {
+    font-size: clamp(3.3rem, 17vw, 5rem);
+  }
+
+  .skill-languages-heading {
+    font-size: 0.55rem;
+  }
+
+  .skills-container-elements {
+    padding: 0.65rem 0.7rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-container-elements,
+  .skills-container-elements::before,
+  .skills-container-elements h4 {
+    transition: none;
+  }
+
+  .skills-container-elements:hover {
+    transform: none;
+  }
+}

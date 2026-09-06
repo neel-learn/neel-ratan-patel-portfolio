@@ -256,87 +256,77 @@
     color: var(--accent);
 }
 
-
 /* =========================================================
-   PROJECT ACTIONS
-   GitHub / Deploy
+   PROJECT ACTION LINKS
    ========================================================= */
 
-.project-actions {
+.project-action {
     position: relative;
 
-    display: flex;
-
-    gap: 0.7rem;
-
-    margin-top: 1.3rem;
-
-    z-index: 4;
-}
-
-.project-btn {
     display: inline-flex;
-
     align-items: center;
-    justify-content: center;
+    gap: 0.45rem;
 
-    min-width: 105px;
-
-    padding: 0.65rem 1rem;
-
-    border: 1px solid var(--line-soft);
-
-    background: rgba(255, 255, 255, 0.015);
+    padding: 0.55rem 0;
 
     color: var(--text-secondary);
 
     font-family: var(--font-mono);
-
-    font-size: 0.58rem;
-
-    letter-spacing: 0.1em;
-
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 
     text-decoration: none;
 
     transition:
         color 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease,
         transform 0.3s ease;
 }
 
-.project-btn:hover {
-    color: var(--accent);
+/* Small accent line under link */
 
-    border-color: var(--accent);
+.project-action::after {
+    content: "";
 
-    background: rgba(217, 255, 0, 0.05);
+    position: absolute;
 
-    transform: translateY(-3px);
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition: width 0.3s ease;
 }
 
+/* Arrow */
 
-/* GitHub button */
-
-.project-btn.github::before {
-    content: "⌘";
-
-    margin-right: 0.5rem;
-
+.action-arrow {
     font-size: 0.8rem;
+
+    color: var(--text-muted);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
+/* Hover */
 
-/* Deploy button */
-
-.project-btn.deploy::before {
-    content: "↗";
-
-    margin-right: 0.5rem;
+.project-action:hover {
+    color: var(--accent);
 }
 
+.project-action:hover::after {
+    width: 100%;
+}
+
+.project-action:hover .action-arrow {
+    color: var(--accent);
+    transform: translate(3px, -3px);
+}
 
 /* =========================================================
    HOVER BACKGROUND
@@ -369,19 +359,9 @@
     pointer-events: none;
 }
 
-
 /* =========================================================
    HOVER STATE
    ========================================================= */
-
-.project-container:hover {
-    background:
-        linear-gradient(
-            90deg,
-            rgba(217, 255, 0, 0.025),
-            transparent 55%
-        );
-}
 
 .project-container:hover::after {
     height: 100%;
@@ -389,11 +369,14 @@
 
 .project-container:hover h4 {
     color: var(--accent);
-
     transform: translateX(10px);
 }
 
 .project-container:hover h5 {
+    transform: translateX(10px);
+}
+
+.project-container:hover .project-technologies {
     transform: translateX(10px);
 }
 
@@ -402,6 +385,56 @@
 }
 
 
+/* =========================================================
+   TECHNOLOGY STACK
+   ========================================================= */
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 0.45rem 0.8rem;
+
+    margin-top: 1.2rem;
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.technology-tag {
+    position: relative;
+
+    display: inline-block;
+
+    color: var(--text-secondary);
+
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 400;
+
+    letter-spacing: 0.04em;
+
+    opacity: 0.9;
+
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.technology-tag:not(:last-child)::after {
+    content: "•";
+
+    margin-left: 0.8rem;
+
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.technology-tag:hover {
+    color: var(--accent);
+    opacity: 1;
+}
 /* =========================================================
    TOP RIGHT LABEL
    ========================================================= */
@@ -526,16 +559,15 @@
         margin-top: 1rem;
     }
 
-    .project-btn {
-        min-width: 95px;
-
-        padding: 0.6rem 0.8rem;
-
+    .project-action {
         font-size: 0.52rem;
+        padding: 0.5rem 0;
     }
+
 
     .project-container:hover h4,
     .project-container:hover h5,
+    .project-container:hover .project-technologies,
     .project-container:hover .project-actions {
         transform: none;
     }
@@ -577,17 +609,12 @@
     .project-container::before {
         font-size: 0.5rem;
     }
-
     .project-actions {
-        gap: 0.5rem;
+        gap: 0.7rem;
     }
 
-    .project-btn {
-        min-width: auto;
-
-        padding: 0.55rem 0.7rem;
-
-        font-size: 0.48rem;
+    .project-action {
+        font-size: 0.5rem;
     }
 }
 

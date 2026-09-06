@@ -1,0 +1,244 @@
+/* =========================================================
+   NAME
+   ========================================================= */
+
+#about-name {
+  margin-top: 0.8rem;
+}
+
+#about-name h3 {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: 420px;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+
+  color: var(--text-primary);
+}
+
+#about-name .hover-grow {
+  transition:
+    color 0.3s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#about-name .hover-grow:hover {
+  color: var(--accent);
+
+  transform: translateY(-4px);
+}
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.about-right-section {
+  position: relative;
+
+  padding-top: 3rem;
+}
+
+.about-right-section::before {
+  content: "WHO I AM";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+
+  letter-spacing: 0.18em;
+
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   ABOUT HEADING
+   ========================================================= */
+
+.about-text {
+  margin-bottom: 2.2rem;
+
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 700;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.07em;
+
+  color: var(--text-primary);
+}
+
+.about-text .hover-grow:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
+   ABOUT DESCRIPTION
+   ========================================================= */
+
+.about-right-section h4 {
+  max-width: 650px;
+
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 400;
+
+  line-height: 1.9;
+
+  color: var(--text-secondary);
+}
+
+.about-right-section h4::first-letter {
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   DECORATIVE LINE
+   ========================================================= */
+
+.about-right-section h4::after {
+  content: "";
+
+  display: block;
+
+  width: 80px;
+  height: 1px;
+
+  margin-top: 3rem;
+
+  background: var(--accent);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .secondSection {
+    padding: 8rem 3rem;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 3rem;
+  }
+
+  #about-img {
+    width: min(100%, 320px);
+  }
+
+  .about-text {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  .about-right-section h4 {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .about-left-section::after {
+    right: -5px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .secondSection {
+    min-height: auto;
+
+    padding: 8rem 1.5rem 6rem;
+  }
+
+  .about-container {
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 4rem;
+  }
+
+  .about-container::before {
+    top: -2.5rem;
+  }
+
+  .about-left-section {
+    align-items: flex-start;
+  }
+
+  #about-img {
+    width: min(100%, 340px);
+  }
+
+  .about-left-section::after {
+    display: none;
+  }
+
+  #about-name h3 {
+    max-width: 340px;
+
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
+  }
+
+  .about-right-section {
+    padding-top: 2.5rem;
+  }
+
+  .about-right-section::before {
+    top: 0;
+  }
+
+  .about-text {
+    margin-bottom: 1.8rem;
+
+    font-size: clamp(3.5rem, 16vw, 6rem);
+  }
+
+  .about-right-section h4 {
+    max-width: 100%;
+
+    font-size: 0.95rem;
+
+    line-height: 1.85;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .secondSection {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  #about-img {
+    width: 100%;
+  }
+
+  .about-text {
+    font-size: clamp(3.2rem, 17vw, 5rem);
+  }
+
+  .about-right-section h4 {
+    font-size: 0.9rem;
+  }
+}

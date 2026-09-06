@@ -156,37 +156,37 @@
 
   color: var(--text-muted);
 
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
   transition:
     color 0.3s ease,
     transform 0.3s ease;
 }
 
 .nav-links li a::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: -7px;
-
-  width: 0;
-  height: 1px;
-
-  background: var(--accent);
-
-  transform: translateX(-50%);
-
-  transition: width 0.3s ease;
+  content: none !important;
+  display: none !important;
 }
 
 .nav-links li a:hover {
   color: var(--text-primary);
-
   transform: translateY(-2px);
 }
 
-.nav-links li a:hover::after {
-  width: 14px;
+.nav-links li i {
+  font-size: 0.95rem;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.nav-links li a:hover i {
+  color: var(--accent);
+  transform: scale(1.12);
 }
 
 

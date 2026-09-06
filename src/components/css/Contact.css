@@ -1,0 +1,505 @@
+/* =========================================================
+   CONTACT / LET'S CONNECT
+   ========================================================= */
+
+.sixthSection {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: var(--section-padding) 5vw 7rem;
+
+  border-top: 1px solid var(--line-soft);
+
+  overflow: hidden;
+}
+
+#contact {
+  padding-top: 180px;
+  scroll-margin-top: 100px;
+}
+
+/* =========================================================
+   SECTION NUMBER
+   ========================================================= */
+
+.sixthSection::before {
+  content: "06 / CONTACT";
+
+  position: absolute;
+
+  top: 7rem;
+  left: 5vw;
+
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   CONTACT HEADING
+   ========================================================= */
+
+.contact-heading {
+  width: min(1200px, 100%);
+
+  margin: 0 auto 5rem;
+}
+
+.contact-heading h3 {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 700;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.075em;
+
+  color: var(--text-primary);
+}
+
+.contact-heading .hover-grow {
+  transition:
+    color 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-heading .hover-grow:hover {
+  color: var(--accent);
+
+  transform: translateY(-6px);
+}
+
+/* =========================================================
+   CONTACT MAIN CONTAINER
+   ========================================================= */
+
+.contact-container {
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1.3fr 0.7fr;
+
+  gap: 5rem;
+
+  align-items: start;
+}
+
+/* =========================================================
+   SOCIAL / LOCAL CONTACT AREA
+   ========================================================= */
+
+.contact-local-container {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  margin-top: 2rem;
+}
+
+/* =========================================================
+   SOCIAL BUTTONS
+   ========================================================= */
+
+.contact-local-elements {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--line);
+
+  background: rgba(255, 255, 255, 0.015);
+
+  color: var(--text-secondary);
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Accent fill */
+
+.contact-local-elements::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 0;
+
+  background: var(--accent);
+
+  transition: height 0.3s ease;
+
+  z-index: 0;
+}
+
+/* Icon */
+
+.contact-local-elements i {
+  position: relative;
+
+  z-index: 1;
+
+  font-size: 1rem;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Hover */
+
+.contact-local-elements:hover {
+  border-color: var(--accent);
+
+  color: #080808;
+
+  transform: translateY(-5px);
+}
+
+.contact-local-elements:hover::before {
+  height: 100%;
+}
+
+.contact-local-elements:hover i {
+  color: #080808;
+
+  transform: scale(1.1);
+}
+
+/* =========================================================
+   LIKE BUTTON
+   ========================================================= */
+
+#likeButton {
+  cursor: pointer;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.3s ease;
+}
+
+#likeButton:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--accent);
+}
+
+#likeButton::before {
+  display: none;
+}
+
+#likeBtn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 26px;
+}
+
+#likeBtn i {
+  font-size: 1.1rem !important;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+#likeButton:hover #likeBtn i {
+  transform: scale(1.2);
+}
+
+#likeText {
+  position: relative;
+
+  z-index: 2;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.45rem !important;
+
+  letter-spacing: 0.04em;
+
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   RESUME AREA
+   ========================================================= */
+
+.last-container {
+  width: 100%;
+
+  margin-top: 3rem;
+}
+
+/* =========================================================
+   RESUME BUTTON
+   ========================================================= */
+
+.full-width-btn {
+  width: 100%;
+
+  min-height: 58px;
+
+  padding: 1rem 1.5rem;
+
+  border: 1px solid var(--line);
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.full-width-btn:hover {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: #080808;
+}
+
+/* =========================================================
+   PDF CONTAINER
+   ========================================================= */
+
+#pdf-container {
+  width: 100%;
+
+  height: 0;
+
+  margin-top: 0;
+
+  overflow: hidden;
+
+  border: 1px solid transparent;
+
+  opacity: 0;
+
+  transition:
+    height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease,
+    margin-top 0.5s ease;
+}
+
+/* Open state */
+
+#pdf-container.show {
+  height: 700px;
+
+  margin-top: 1rem;
+
+  border-color: var(--line);
+
+  opacity: 1;
+}
+
+#pdf-iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: none;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   CONTACT SIDE VISUAL
+   ========================================================= */
+
+.contact-container::after {
+  content: "AVAILABLE FOR\\A COLLABORATION\\A\\A JAVA / REACT\\A SPRING BOOT\\A FULL STACK";
+
+  white-space: pre;
+
+  position: absolute;
+
+  right: 5vw;
+  bottom: 7rem;
+
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+
+  line-height: 2;
+
+  letter-spacing: 0.1em;
+
+  color: var(--text-muted);
+
+  text-align: right;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .sixthSection {
+    padding: 8rem 3rem 6rem;
+  }
+
+  .sixthSection::before {
+    left: 3rem;
+  }
+
+  .contact-heading {
+    margin-bottom: 4rem;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .contact-container::after {
+    display: none;
+  }
+
+  .contact-local-container {
+    margin-top: 0;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .sixthSection {
+    min-height: auto;
+
+    padding: 8rem 1.5rem 6rem;
+  }
+
+  .sixthSection::before {
+    top: 3rem;
+    left: 1.5rem;
+  }
+
+  .contact-heading {
+    margin-bottom: 3.5rem;
+  }
+
+  .contact-heading h3 {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+  }
+
+  .contact-container {
+    gap: 2.5rem;
+  }
+
+  .contact-local-container {
+    flex-wrap: wrap;
+
+    gap: 0.55rem;
+  }
+
+  .contact-local-elements {
+    width: 44px;
+    height: 44px;
+  }
+
+  .last-container {
+    margin-top: 1.5rem;
+  }
+
+  #pdf-container.show {
+    height: 500px;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .sixthSection {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .sixthSection::before {
+    left: 1.2rem;
+  }
+
+  .contact-heading h3 {
+    font-size: clamp(3.2rem, 16vw, 5rem);
+  }
+
+  .contact-local-elements {
+    width: 42px;
+    height: 42px;
+  }
+
+  #pdf-container.show {
+    height: 450px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-local-elements,
+  .contact-local-elements::before,
+  .contact-local-elements i,
+  .full-width-btn,
+  #pdf-container {
+    transition: none;
+  }
+}

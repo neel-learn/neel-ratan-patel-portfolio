@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-// import { addLike, disLike, updateLikesInDb } from "../../store/portfolioSlice";
+import './../css/Contact.css';
 import { toggleLike } from "../../store/portfolioSlice";
 import myresume from "../objects/pdf/NEEL_RATAN_PATEL_JAVA_FULL_STACK_DEVELOPER_RESUME.pdf"
 import { useDispatch, useSelector } from "react-redux";

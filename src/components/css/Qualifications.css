@@ -1,0 +1,457 @@
+/* =========================================================
+   QUALIFICATIONS / JOURNEY
+   ========================================================= */
+
+.thirdSection {
+  position: relative;
+
+  min-height: 100vh;
+  padding-top: 5vh;
+  padding: var(--section-padding) 5vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-top: 1px solid var(--line-soft);
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   SECTION CONTAINER
+   ========================================================= */
+
+.thirdSection::before {
+  content: "03 / JOURNEY";
+
+  position: absolute;
+
+  top: 7rem;
+  left: 5vw;
+
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.qualifications-heading {
+  position: relative;
+
+  width: min(1200px, 100%);
+
+  margin: 0 auto 5rem;
+}
+
+.qualifications-heading h3 {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 700;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.075em;
+
+  color: var(--text-primary);
+}
+
+.qualifications-heading h3 .hover-grow {
+  transition:
+    color 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.qualifications-heading h3 .hover-grow:hover {
+  color: var(--accent);
+
+  transform: translateY(-6px);
+}
+
+/* =========================================================
+   QUALIFICATION TIMELINE
+   ========================================================= */
+
+.academic-Qualifications {
+  position: relative;
+
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Central timeline */
+
+.academic-Qualifications::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 180px;
+
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--line),
+    var(--line),
+    transparent
+  );
+}
+
+/* =========================================================
+   QUALIFICATION ITEM
+   ========================================================= */
+
+.qualification-container {
+  position: relative;
+
+  min-height: 150px;
+
+  padding: 2rem 2rem 2rem 240px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-top: 1px solid var(--line-soft);
+
+  transition:
+    background 0.4s ease,
+    padding-left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.qualification-container:last-child {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+/* Timeline dot */
+
+.qualification-container::before {
+  content: "";
+
+  position: absolute;
+
+  left: 175px;
+  top: 50%;
+
+  width: 11px;
+  height: 11px;
+
+  border: 1px solid var(--accent);
+
+  background: var(--bg-primary);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Hover */
+
+.qualification-container:hover {
+  background: linear-gradient(90deg, rgba(217, 255, 0, 0.045), transparent 65%);
+
+  padding-left: 250px;
+}
+
+.qualification-container:hover::before {
+  background: var(--accent);
+
+  box-shadow:
+    0 0 0 5px rgba(217, 255, 0, 0.08),
+    0 0 20px rgba(217, 255, 0, 0.3);
+
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* =========================================================
+   QUALIFICATION TITLE
+   ========================================================= */
+
+.qualificaiton-container-heading {
+  margin: 0 0 0.8rem;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+
+  color: var(--text-primary);
+}
+
+.qualificaiton-container-heading sup {
+  margin-left: 0.1rem;
+
+  font-family: var(--font-mono);
+  font-size: 0.45em;
+
+  color: var(--accent);
+
+  vertical-align: super;
+}
+
+/* =========================================================
+   QUALIFICATION DETAILS
+   ========================================================= */
+
+.qualification-container-body {
+  margin: 0;
+}
+
+.qualification-container-body ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 0.8rem 1.5rem;
+}
+
+.qualification-container-body li {
+  position: relative;
+
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-muted);
+}
+
+.qualification-container-body li:not(:last-child)::after {
+  content: "/";
+
+  position: absolute;
+
+  right: -0.9rem;
+
+  color: var(--line);
+}
+
+/* Session */
+
+.qualification-container-body-year {
+  color: var(--accent) !important;
+}
+
+/* =========================================================
+   DESKTOP NUMBER MARKER
+   ========================================================= */
+
+.qualification-container:nth-child(1)::after {
+  content: "01";
+}
+
+.qualification-container:nth-child(2)::after {
+  content: "02";
+}
+
+.qualification-container:nth-child(3)::after {
+  content: "03";
+}
+
+.qualification-container:nth-child(4)::after {
+  content: "04";
+}
+
+.qualification-container::after {
+  position: absolute;
+
+  left: 0;
+
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--text-muted);
+
+  opacity: 0.6;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .thirdSection {
+    padding: 8rem 3rem;
+  }
+
+  .thirdSection::before {
+    left: 3rem;
+  }
+
+  .qualifications-heading {
+    margin-bottom: 4rem;
+  }
+
+  .academic-Qualifications::before {
+    left: 130px;
+  }
+
+  .qualification-container {
+    padding-left: 180px;
+  }
+
+  .qualification-container::before {
+    left: 125px;
+  }
+
+  .qualification-container:hover {
+    padding-left: 190px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .thirdSection {
+    min-height: auto;
+
+    padding: 8rem 1.5rem 6rem;
+  }
+
+  .thirdSection::before {
+    top: 3rem;
+    left: 1.5rem;
+  }
+
+  .qualifications-heading {
+    margin-bottom: 3rem;
+  }
+
+  .qualifications-heading h3 {
+    font-size: clamp(3.7rem, 15vw, 6rem);
+  }
+
+  .academic-Qualifications::before {
+    left: 15px;
+  }
+
+  .qualification-container {
+    min-height: 145px;
+
+    padding: 2rem 1rem 2rem 55px;
+  }
+
+  .qualification-container:hover {
+    padding-left: 60px;
+  }
+
+  .qualification-container::before {
+    left: 15px;
+
+    width: 9px;
+    height: 9px;
+  }
+
+  .qualification-container::after {
+    left: 0;
+
+    font-size: 0.5rem;
+  }
+
+  .qualificaiton-container-heading {
+    font-size: 1.25rem;
+
+    line-height: 1.2;
+  }
+
+  .qualification-container-body ul {
+    gap: 0.6rem 1.1rem;
+  }
+
+  .qualification-container-body li {
+    font-size: 0.55rem;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .thirdSection {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .thirdSection::before {
+    left: 1.2rem;
+  }
+
+  .qualifications-heading h3 {
+    font-size: clamp(3.3rem, 16vw, 5rem);
+  }
+
+  .qualification-container {
+    padding-left: 48px;
+  }
+
+  .qualification-container:hover {
+    padding-left: 53px;
+  }
+
+  .academic-Qualifications::before {
+    left: 12px;
+  }
+
+  .qualification-container::before {
+    left: 12px;
+  }
+
+  .qualification-container-body ul {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0.35rem;
+  }
+
+  .qualification-container-body li:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .qualification-container,
+  .qualification-container::before {
+    transition: none;
+  }
+}
